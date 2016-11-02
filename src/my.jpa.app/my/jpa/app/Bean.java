@@ -5,7 +5,8 @@ import java.util.ServiceLoader;
 
 import javax.persistence.EntityManager;
 
-@GrantAccess(frameworks = EntityManager.class)
+// @GrantAccess(frameworks = EntityManager.class)
+// declared on the module instead
 public class Bean {
   private void foo() { System.out.println("hello"); }  
   
