@@ -12,6 +12,12 @@ $javac -d output/classes \
 $javac -d output/modules/javax.persistence \
        $(find src/javax.persistence/ -name "*.java")
 
+#$javac --module-source-path src \
+#       -d output/modules/ \
+#       --patch-module java.base=output/classes \
+#       --module-path output/modules \
+#       $(find src/org.hibernate.jpa/ -name "*.java")
+
 $javac -d output/modules/org.hibernate.jpa \
        --patch-module java.base=output/classes \
        --module-path output/modules \
@@ -25,9 +31,3 @@ $javac -d output/modules/my.jpa.app \
 $java --module-path output/modules \
       --patch-module java.base=output/classes \
       -m my.jpa.app/my.jpa.app.Bean
-
-
-       
-
-
-
